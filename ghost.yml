@@ -9,7 +9,7 @@ services:
       - 8080:2368
     environment:
       # see https://ghost.org/docs/config/#configuration-options
-      database__client: $GHOST_DB_NAME
+      database__client: mysql
       database__connection__host: db
       database__connection__user: $GHOST_DB_USER
       database__connection__password: $GHOST_DB_PASS
