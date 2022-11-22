@@ -11,9 +11,9 @@ services:
       - 8080:80
     environment:
       WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: $DOCKER_WP_DB_USER
-      WORDPRESS_DB_PASSWORD: $DOCKER_WP_DB_PASS
-      WORDPRESS_DB_NAME: $DOCKER_WP_DB_NAME
+      WORDPRESS_DB_USER: $DOCKER_DB_USER
+      WORDPRESS_DB_PASSWORD: $DOCKER_DB_PASS
+      WORDPRESS_DB_NAME: $DOCKER_DB_NAME
     volumes:
       - wordpress:/var/www/html
 
@@ -21,9 +21,9 @@ services:
     image: mysql:5.7
     restart: always
     environment:
-      MYSQL_DATABASE: $DOCKER_WP_DB_NAME
-      MYSQL_USER: $DOCKER_WP_DB_USER
-      MYSQL_PASSWORD: $DOCKER_WP_DB_PASS
+      MYSQL_DATABASE: $DOCKER_DB_NAME
+      MYSQL_USER: $DOCKER_DB_USER
+      MYSQL_PASSWORD: $DOCKER_DB_PASS
       MYSQL_RANDOM_ROOT_PASSWORD: '1'
     volumes:
       - db:/var/lib/mysql
