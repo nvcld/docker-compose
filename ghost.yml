@@ -6,7 +6,7 @@ services:
     image: ghost:4-alpine
     restart: always
     ports:
-      - 8080:2368
+      - 80:2368
     depends_on:
       db:
         condition: service_healthy
