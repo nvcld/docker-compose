@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-version: '3.1'
-=======
 version: '2'
->>>>>>> dd40c9d (edit: ghost compose)
 
 services:
 
@@ -11,12 +7,9 @@ services:
     restart: always
     ports:
       - 8080:2368
-<<<<<<< HEAD
-=======
     depends_on:
       db:
         condition: service_healthy
->>>>>>> dd40c9d (edit: ghost compose)
     environment:
       # see https://ghost.org/docs/config/#configuration-options
       database__client: mysql
@@ -33,9 +26,6 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-<<<<<<< HEAD
-      MYSQL_ROOT_PASSWORD: $DB_PASS
-=======
       MYSQL_ROOT_PASSWORD: $DB_PASS
       MYSQL_PASSWORD: $DB_PASS
       MYSQL_DATABASE: $DB_NAME
@@ -46,4 +36,3 @@ services:
       test: ["CMD-SHELL", "mysqladmin ping -P 3306 -p$DB_PASS | grep 'mysqld is alive' || exit 1"]
       interval: 2s
       retries: 15
->>>>>>> dd40c9d (edit: ghost compose)
