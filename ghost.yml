@@ -3,6 +3,7 @@ version: '2'
 services:
 
   ghost:
+    container_name: ghost
     image: ghost:4-alpine
     restart: always
     ports:
@@ -23,6 +24,7 @@ services:
       #NODE_ENV: development
 
   db:
+    container_name: mysql
     image: mysql:8.0
     restart: always
     environment:

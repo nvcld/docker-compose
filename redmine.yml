@@ -3,6 +3,7 @@ version: '3.1'
 services:
 
   redmine:
+    container_name: redmine
     image: redmine
     restart: always
     ports:
@@ -14,6 +15,7 @@ services:
       REDMINE_DB_DATABASE: $DB_NAME
 
   db:
+    container_name: mysql
     image: mysql:5.7
     restart: always
     environment:
