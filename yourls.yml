@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+
+  yourls:
+    container_name: yourls
+    image: yourls
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      YOURLS_DB_PASS: $DB_PASS
+      YOURLS_SITE: $URL
+      YOURLS_USER: $WEB_USER
+      YOURLS_PASS: $WEB_PASS
+
+  mysql:
+    container_name: mysql
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASS
+      MYSQL_DATABASE: yourls
