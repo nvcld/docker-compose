@@ -4,7 +4,7 @@ services:
 
   drupal:
     container_name: drupal
-    image: drupal:8-apache
+    image: drupal:latest
     ports:
       - 80:80
     volumes:
