@@ -1,18 +1,26 @@
 version: '3.1'
 
 services:
-
   db:
     container_name: mariadb
     image: mariadb
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: $DB_PASS
+      MARIADB_ROOT_PASSWORD: $DB_ROOT_PASS
+      MARIADB_USER: $DB_USER
+      MARIADB_PASSWORD: $DB_PASS
       MARIADB_DATABASE: $DB_NAME
+    ports:
+      - "127.0.0.1:3306:3306"
+    volumes:
+      - mariadb-data:/var/lib/mysql
 
-  adminer:
+  web:
     container_name: adminer
     image: adminer
     restart: always
     ports:
       - 80:8080
+
+volumes:
+  mariadb-data:

@@ -1,23 +1,25 @@
 version: '3.1'
 
 services:
-
-  drupal:
+  web:
     container_name: drupal
-    image: drupal:latest
+    image: drupal
     ports:
       - 80:80
     volumes:
-      - /var/www/html/modules
-      - /var/www/html/profiles
-      - /var/www/html/themes
-      - /var/www/html/sites
+      - drupal-data:/var/www/html
     restart: always
 
-  postgres:
+  db:
     container_name: postgres
     image: postgres:10
     environment:
       POSTGRES_PASSWORD: $DB_PASS
       POSTGRES_USER: $DB_USER
     restart: always
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+  drupal-data:
