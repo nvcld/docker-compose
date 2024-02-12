@@ -3,7 +3,7 @@ version: '2'
 services:
   web:
     container_name: ghost
-    image: ghost:5
+    image: ghost:latest
     restart: always
     ports:
       - 80:2368
