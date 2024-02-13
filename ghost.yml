@@ -7,7 +7,7 @@ services:
     restart: always
     ports:
       - 80:2368
-      - 8080:2368
+      - 443:2368
     environment:
       # see https://ghost.org/docs/config/#configuration-options
       database__client: mysql
@@ -16,7 +16,7 @@ services:
       database__connection__password: $DB_PASS
       database__connection__database: GhostDB
       # this url value is just an example, and is likely wrong for your environment!
-      #url: http://$URL
+      url: http://$URL
       # contrary to the default mentioned in the linked documentation, this image defaults to NODE_ENV=production (so development mode needs to be explicitly specified if desired)
       #NODE_ENV: development
     volumes:
